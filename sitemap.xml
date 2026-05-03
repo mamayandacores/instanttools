@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://yourwebsite.com/</loc>
+        <lastmod>2026-05-03</lastmod>
+    </url>
+    <url>
+        <loc>https://yourwebsite.com/tool1</loc>
+        <lastmod>2026-05-03</lastmod>
+    </url>
+    <url>
+        <loc>https://yourwebsite.com/tool2</loc>
+        <lastmod>2026-05-03</lastmod>
+    </url>
+    <url>
+        <loc>https://yourwebsite.com/tool3</loc>
+        <lastmod>2026-05-03</lastmod>
+    </url>
+    <!-- Add all tool pages here -->
+</urlset>
