@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        textarea { width: 100%; height: 300px; }
+        button { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Markdown to HTML Converter</h1>
+    <textarea id="markdownInput" placeholder="Write your Markdown here..."></textarea>
+    <button onclick="convertMarkdown()">Convert</button>
+    <h2>Converted HTML:</h2>
+    <div id="htmlOutput" style="border: 1px solid #ccc; padding: 10px;"></div>
+
+    <script>
+        function convertMarkdown() {
+            var markdownText = document.getElementById('markdownInput').value;
+            var htmlText = markdownToHtml(markdownText); // Assume a function to convert markdown to HTML)
+            document.getElementById('htmlOutput').innerHTML = htmlText;
+        }
+
+        function markdownToHtml(markdown) {
+            // Placeholder function for demo. You may use a library like marked.js
+            return markdown.replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/, '<strong>$1</strong>').replace(/\*(.*?)\*/, '<em>$1</em>');
+        }
+    </script>
+</body>
+</html>
