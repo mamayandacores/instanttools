@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Minifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CSS Minifier Tool</h1>
+    <form id="minifier-form">
+        <textarea id="css-input" rows="10" placeholder="Paste your CSS here..."></textarea>
+        <button type="submit">Minify CSS</button>
+    </form>
+    <h2>Minified CSS:</h2>
+    <textarea id="css-output" rows="10" readonly></textarea>
+
+    <script>
+        document.getElementById('minifier-form').onsubmit = function(event) {
+            event.preventDefault();
+            const cssInput = document.getElementById('css-input').value;
+            const minifiedCSS = cssInput.replace(/\s+/g, ' ').replace(/\s*([{};:,+\-])\s*/g, '$1');
+            document.getElementById('css-output').value = minifiedCSS;
+        };
+    </script>
+</body>
+</html>
