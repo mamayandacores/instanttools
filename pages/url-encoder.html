@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encoder/Decoder Tool</title>
+</head>
+<body>
+    <h1>URL Encoder/Decoder Tool</h1>
+    <form id="url-form">
+        <label for="url-input">Enter URL:</label>
+        <input type="text" id="url-input" placeholder="Enter URL or text here" required>
+        <button type="submit">Encode/Decode</button>
+    </form>
+    <h2>Result:</h2>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('url-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const urlInput = document.getElementById('url-input').value;
+            const resultElement = document.getElementById('result');
+            if (isEncoded(urlInput)) {
+                // Decode the URL
+                resultElement.textContent = decodeURIComponent(urlInput);
+            } else {
+                // Encode the URL
+                resultElement.textContent = encodeURIComponent(urlInput);
+            }
+        });
+
+        function isEncoded(str) {
+            try {
+                return str !== decodeURIComponent(str);
+            } catch (e) {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
