@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Feedback</title>
+</head>
+<body>
+    <h1>Community Feedback Form</h1>
+    <form id="feedbackForm">
+        <label for="username">Name:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>User Suggestions and Feedback</h2>
+    <div id="feedbackList">
+        <!-- User feedback will be displayed here -->
+    </div>
+    <script>
+        const feedbackForm = document.getElementById('feedbackForm');
+        const feedbackList = document.getElementById('feedbackList');
+
+        feedbackForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const feedback = document.getElementById('feedback').value;
+
+            const feedbackItem = document.createElement('div');
+            feedbackItem.innerHTML = `<strong>${username}</strong>: ${feedback}`;
+            feedbackList.appendChild(feedbackItem);
+
+            feedbackForm.reset();
+        });
+    </script>
+</body>
+</html>
