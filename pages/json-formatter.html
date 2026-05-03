@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter</title>
+</head>
+<body>
+    <h1>JSON Formatter Tool</h1>
+    <form id="jsonFormatterForm">
+        <textarea id="jsonInput" cols="30" rows="10" placeholder="Enter JSON here..."></textarea>
+        <br>
+        <button type="submit">Format JSON</button>
+    </form>
+    <h2>Formatted JSON</h2>
+    <pre id="formattedOutput"></pre>
+    <script>
+        document.getElementById('jsonFormatterForm').onsubmit = function(event) {
+            event.preventDefault();
+            const jsonInput = document.getElementById('jsonInput').value;
+            try {
+                const jsonObj = JSON.parse(jsonInput);
+                document.getElementById('formattedOutput').textContent = JSON.stringify(jsonObj, null, 4);
+            } catch (e) {
+                document.getElementById('formattedOutput').textContent = 'Invalid JSON: ' + e.message;
+            }
+        };
+    </script>
+</body>
+</html>
