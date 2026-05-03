@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 10px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .container {
+        padding: 0 30px;
+    }
+}
